@@ -6,10 +6,12 @@ public class NumberBaseball {
         int count = 10;
         // 실행 횟수
         int play = 0;
+        
         // 랜덤 숫자 3개 생성
         int radomNumber1 = (int) (Math.random() * 10);
         int radomNumber2 = (int) (Math.random() * 10);
         int radomNumber3 = (int) (Math.random() * 10);
+        
         // 카운트
         int strike = 0;
         int ball = 0;
@@ -30,6 +32,7 @@ public class NumberBaseball {
         System.out.println(radomNumber1);
         System.out.println(radomNumber2);
         System.out.println(radomNumber3);
+        
         // 임의의 숫자 입력
         Scanner sc = new Scanner(System.in);
         int inputNumber1 = 0;
@@ -54,20 +57,24 @@ public class NumberBaseball {
                 System.out.print("세번째 숫자 : ");
                 inputNumber3 = sc.nextInt();
                 System.out.println("================================");
-                if (inputNumber1 >= 10 || inputNumber2 >= 10 || inputNumber3 >= 10) { // 10 이상의 숫자 제거
+                
+                // 10 이상의 숫자 제거
+                if (inputNumber1 >= 10 || inputNumber2 >= 10 || inputNumber3 >= 10) { 
                     System.out.println("10미만의 숫자를 입력해주세요.");
                     System.out.println((count - play) + "회 남았습니다.");
                     continue;
                 }
-
-                if (inputNumber1 <= -1 || inputNumber2 <= -1 || inputNumber3 <= -1) { // 0미만의 숫자 제거
+                
+                // 0미만의 숫자 제거
+                if (inputNumber1 <= -1 || inputNumber2 <= -1 || inputNumber3 <= -1) { 
                     System.out.println("0이상의 숫자를 입력해주세요.");
                     System.out.println((count - play) + "회 남았습니다.");
                     continue;
                 }
-
+                
+                // 임의의 숫자 중복 제거
                 if (inputNumber1 == inputNumber2 || inputNumber1 == inputNumber3 || inputNumber2 == inputNumber3) {
-                    System.out.println("중복이 발견되었습니다. 다시 입력해주세요."); // 임의의 숫자 중복 제거
+                    System.out.println("중복이 발견되었습니다. 다시 입력해주세요."); 
                     System.out.println((count - play) + "회 남았습니다.");
                     continue;
                 }
@@ -98,14 +105,17 @@ public class NumberBaseball {
             } else {
                 out++;
             }
+            
             // 결과 출력
             System.out.print(strike + "S ");
             System.out.print(ball + "B ");
             System.out.print(out + "Out");
             System.out.println();
+            
             // play 카운트 1증가
             play++;
             System.out.println((count - play) + "회 남았습니다.");
+            
             // 실행 횟수와 총 횟수 같을시 게임 종료
             if (play == count) {
                 break;
