@@ -8,9 +8,9 @@ public class NumberBaseball {
         int play = 0;
 
         // 랜덤 숫자 3개 생성
-        int radomNumber1 = (int) (Math.random() * 10);
-        int radomNumber2 = (int) (Math.random() * 10);
-        int radomNumber3 = (int) (Math.random() * 10);
+        int randomNumber1 = (int) (Math.random() * 10);
+        int randomNumber2 = (int) (Math.random() * 10);
+        int randomNumber3 = (int) (Math.random() * 10);
 
         // 카운트
         int strike = 0;
@@ -19,10 +19,10 @@ public class NumberBaseball {
 
         // 랜덤 숫자 중복의 경우 제거
         while (true) {
-            if (radomNumber1 == radomNumber2 || radomNumber1 == radomNumber3 || radomNumber2 == radomNumber3) {
-                radomNumber1 = (int) (Math.random() * 10);
-                radomNumber2 = (int) (Math.random() * 10);
-                radomNumber3 = (int) (Math.random() * 10);
+            if (randomNumber1 == randomNumber2 || randomNumber1 == randomNumber3 || randomNumber2 == randomNumber3) {
+                randomNumber1 = (int) (Math.random() * 10);
+                randomNumber2 = (int) (Math.random() * 10);
+                randomNumber3 = (int) (Math.random() * 10);
                 continue;
             }
             break;
@@ -30,9 +30,10 @@ public class NumberBaseball {
         // 랜덤 숫자 중복의 경우 제거 -- 종료
 
         // 정답 출력 (속닥속닥)
-        System.out.println(radomNumber1);
-        System.out.println(radomNumber2);
-        System.out.println(radomNumber3);
+        System.out.println(randomNumber1);
+        System.out.println(randomNumber2);
+        System.out.println(randomNumber3);
+
 
         // 임의의 숫자 입력
         Scanner sc = new Scanner(System.in);
@@ -84,25 +85,25 @@ public class NumberBaseball {
             // 임의의 숫자 중복 제거 -- 종료
 
             // 첫번째 숫자 검사
-            if (radomNumber1 == inputNumber1) {
+            if (randomNumber1 == inputNumber1) {
                 strike++;
-            } else if (radomNumber1 == inputNumber2 || radomNumber1 == inputNumber3) {
+            } else if (randomNumber1 == inputNumber2 || randomNumber1 == inputNumber3) {
                 ball++;
             } else {
                 out++;
             }
             //두번째 숫자 검사
-            if (radomNumber2 == inputNumber2) {
+            if (randomNumber2 == inputNumber2) {
                 strike++;
-            } else if (radomNumber2 == inputNumber1 || radomNumber2 == inputNumber3) {
+            } else if (randomNumber2 == inputNumber1 || randomNumber2 == inputNumber3) {
                 ball++;
             } else {
                 out++;
             }
             // 세번째 숫자 검사
-            if (radomNumber3 == inputNumber3) {
+            if (randomNumber3 == inputNumber3) {
                 strike++;
-            } else if (radomNumber3 == inputNumber1 || radomNumber3 == inputNumber2) {
+            } else if (randomNumber3 == inputNumber1 || randomNumber3 == inputNumber2) {
                 ball++;
             } else {
                 out++;
@@ -115,16 +116,28 @@ public class NumberBaseball {
             System.out.print(out + "Out");
             System.out.println();
 
+            if (strike == 3) {
+                System.out.println("정답입니다 !!!!");
+                break;
+            }
+
             // play 카운트 1증가
             play++;
             System.out.println((count - play) + "회 남았습니다.");
 
             // 실행 횟수와 총 횟수 같을시 게임 종료
             if (play == count) {
+                System.out.println("게임이 종료되었습니다.");
+                System.out.print("정답은 ");
+                System.out.print(randomNumber1 + " ");
+                System.out.print(randomNumber2 + " ");
+                System.out.print(randomNumber3 + " ");
+                System.out.print("이었습니다.");
+                System.out.println();
                 break;
             }
         }
         // 게임 실행 반복 -- 종료
     }
-} 
+}
 
