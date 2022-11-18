@@ -1,5 +1,6 @@
 public class test13 {
     public static void main(String[] args) {
+        // mission 1
         int var1 = 5;
         int var2 = 2;
         double var3 = (double)var1 / (double)var2; //double형으로 변환을 해주고 나눠야 2.5가 출력이 됩니다 int형으로 나누면은 정수값만 출력되기에 2가 출력이 됩니다
@@ -7,6 +8,8 @@ public class test13 {
         int var4 = (int)(var3 * var2);
         System.out.println(var4); // 결과값 5
       
+        
+        // mission 2
         int x=10;
         int y=20;
 //        int z = (++x) + (y--); // 증감연산자의 수행순서는 오른쪽에서 왼쪽 이므로
@@ -15,6 +18,9 @@ public class test13 {
         System.out.println(y--); // 수행하고 난 이후 -가 되었음 출력값 20;
         System.out.println(y); // 출력값 20 - 1 = 19;
 //        System.out.println(z);
+        
+        
+      // mission 3
       System.out.println("시작!");
       while (true) {
             int dice1 = (int) (Math.random() * 6) + 1;
