@@ -15,16 +15,15 @@ public class test13 {
         System.out.println(y--); // 수행하고 난 이후 -가 되었음 출력값 20;
         System.out.println(y); // 출력값 20 - 1 = 19;
 //        System.out.println(z);
-      
+      System.out.println("시작!");
       while (true) {
             int dice1 = (int) (Math.random() * 6) + 1;
             int dice2 = (int) (Math.random() * 6) + 1;
             int diceSum = dice1 + dice2;
 
             if (diceSum == 5) {
-                System.out.println("============================");
                 System.out.println("(" + dice1 + "," + dice2 +")");
-                System.out.println("============================");
+                System.out.println("끝!");
                 break;
             }
             System.out.println("(" + dice1 + "," + dice2 +")");
